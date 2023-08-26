@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>ModelMaster - Algorithms</title>
+</head>
+
+<style>
+  /* Add custom CSS styles here */
+
+
+  .navbar-brand {
+    font-size: 34px; /* Increase navbar brand font size */
+    font-weight: bold;
+    color: #333;
+  }
+
+  .title {
+    text-align: center;
+    font-size: 36px;
+    color: #333;
+    margin-top: 30px;
+  }
+
+  .container {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .btn-primary {
+    font-weight: bolder;
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+
+  .card {
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+
+  }
+
+  /* .card:hover {
+    transform: scale(1.02);
+  } */
+
+  .card-title {
+    font-size: 24px;
+    color: #333;
+  }
+
+  .card-text {
+    text-align: center;
+  }
+
+  .modal-content {
+    background-color: #ffffff;
+  }
+
+  .modal-title {
+    font-size: 24px;
+    color: #333;
+  }
+
+  .modal-body {
+    color: #555;
+  }
+
+  .list-group-item.active {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+
+  .list-group-item.active:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+
+.custom-radio {
+  margin-bottom: 10px;
+}
+
+.custom-radio .form-check-input[type="radio"] {
+  width: 20px; 
+  height: 20px; 
+  margin-right: 10px; 
+  border-radius: 50%; 
+  border: 2px solid #3498db;
+}
+
+.custom-radio .form-check-input[type="radio"]:checked {
+  background-color: #3498db;
+}
+
+.custom-radio .form-check-label {
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+}
+
+
+</style>
+
+<body style="font-family: 'Poppins', sans-serif;
+ background-color: white;">
+  <!-- Navbar Section -->
+  <br><br>
+  <nav class="navbar navbar-expand-lg bg-white navbar-light  shadow fixed-top">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <a class="navbar-brand text-dark" href="Landing-page.html">Model Master</a>
+    </div>
+  
+  </nav>
+  <!-- Navbar End -->
+
+  <!-- Open File  -->
+<h2 class="title text-primary" style="font-weight: bolder; font-size: 44px; letter-spacing: 0.5em;">NEW PROJECT</h2>
+    <div class="container mt-5">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#openModal">
+        Open an existing project from a file
+      </button>
+    </div>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="openModal" tabindex="-1" aria-labelledby="openModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="openModalLabel">Open Project</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="projectFile">Select a project file:</label>
+                <input type="file" class="form-control-file" id="projectFile" accept=".pb, .h5, .hdf5, .ckpt, .pt, .pth, .pkl, .onnx, .caffemodel, .prototxt, .params, .json, .pickle, .ts, .pmml" onchange="checkFile(this)">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="openButton" disabled> <a href="Algorithms-Implementation/Face-Detection.html" style="color: white;">Open</a> </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Open File End -->
+
+ <!-- Algorithms -->
+<div class="card-container">
+  <div class="card">
+      <div class="card-header">
+      </div>
+      <div class="row">
+
+          <div class="col-sm-6 mb-3 mb-sm-0">
+              <div class="card">
+                  <div class="card-body">
+                      <h5 class="card-title"><p class=" " style="color: black; font-size: 25px;">Face Recognition and Detection</p></h5>
+                      <p class="card-text"><img src="images/1.png" alt="" style="display: block; margin-left: auto; margin-right: auto; width: 50%;"
+                                                width="250" height="200"></p>
+                      <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#faceDetectionModal">Start the Face Recognition and Detection Project</a>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-sm-6 mb-3 mb-sm-0">
+              <div class="card">
+                  <div class="card-body">
+                      <h5 class="card-title"><p class=" " style="color: black; font-size: 25px;">Human Pose Estimation</p></h5>
+                      <p class="card-text"><img src="images/2.png" alt="" style="display: block; margin-left: auto; margin-right: auto; width: 50%;"
+                                                width="250" height="200"></p>
+                      <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#faceRecognitionModal">Start the Human Pose Estimation Project</a>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-sm-6 mb-3 mb-sm-0">
+              <div class="card">
+                  <div class="card-body">
+                      <h5 class="card-title"><p class=" " style="color: black; font-size: 25px;">Object Recognition and Detection</p></h5>
+                      <p class="card-text"><img src="images/3.jpeg" alt="" style="display: block; margin-left: auto; margin-right: auto; width: 50%;"
+                                                width="250" height="200"></p>
+                      <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#objectRecognitionModal">Start the Object Recognition and Detection Project</a>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-sm-6 mb-3 mb-sm-0">
+              <div class="card">
+                  <div class="card-body">
+                      <h5 class="card-title"><p class=" " style="color: black; font-size: 25px;">Motion Analysis</p></h5>
+                      <p class="card-text"><img src="images/4.png" alt=""style="display: block; margin-left: auto; margin-right: auto; width: 50%;"
+                                                width="250" height="200"></p>
+                      <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#objectDetectionModal">Start the Motion Analysis Project</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Face Detection Modal -->
+<div class="modal fade" id="faceDetectionModal" tabindex="-1" role="dialog" aria-labelledby="faceDetectionModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="faceDetectionModalLabel">Face Detection and Recognition</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+            <p  class=" " style="color: black; font-size: 20px;"><b>Face Detection and Recognition</b></p>
+            <p class="text-dark lead" style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: 15px;">Detection is the process of finding a face in an image while facial recognition can detect and identify individual faces from an image containing one or many people's faces.</p>
+            <div class="list-group">
+              <h1 class="list-group-item list-group-item-action active" aria-current="true" style="font-size: 15px;">
+                Recomended Algorithms </h1>
+              </a>
+              <div class="form-check custom-radio">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                  YOLO
+                </label>
+              </div>
+              <div class="form-check custom-radio">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <label class="form-check-label" for="flexRadioDefault2">
+                  Deep Neural Networks (DNN)
+                </label>
+              </div>
+              <div class="form-check custom-radio">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                <label class="form-check-label" for="flexRadioDefault3">
+                  YOLO Faces
+                </label>
+              </div>
+              <div class="form-check custom-radio">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
+                <label class="form-check-label" for="flexRadioDefault4">
+                  Haar Cascade Classifier
+                </label>
+              </div>
+              <div class="form-check custom-radio">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault5">
+                <label class="form-check-label" for="flexRadioDefault5">
+                  Convolutional Neural Networks (CNN)
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary"> <a href="Algorithms-Implementation/Face-Detection.html" style="color: white;">Start Project</a> </button>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Face Recognition Modal -->
+<div class="modal fade" id="faceRecognitionModal" tabindex="-1" role="dialog" aria-labelledby="faceRecognitionModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="faceRecognitionModalLabel">Human Pose Estimation</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+            <p  class=" " style="color: black; font-size: 20px;"><b>Human Pose Estimation</b></p>
+            <p class="text-dark lead" style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: 15px;">Human pose estimation focuses on detecting and estimating the pose (position and orientation) of human body parts in images or videos.</p>
+            <div class="list-group">
+              <h1 class="list-group-item list-group-item-action active" aria-current="true" style="font-size: 15px;">
+                Recomended Algorithms </h1>
+              <div class="form-check custom-radio">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                  OpenPose
+                </label>
+              </div>
+              <div class="form-check custom-radio">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <label class="form-check-label" for="flexRadioDefault2">
+                  HRNet (High-Resolution Network)
+                </label>
+              </div>
+              <div class="form-check custom-radio">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                <label class="form-check-label" for="flexRadioDefault3">
+                  AlphaPose
+                </label>
+              </div>
+              <div class="form-check custom-radio">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
+                <label class="form-check-label" for="flexRadioDefault4">
+                  CPM (Convolutional Pose Machines)
+                </label>
+              </div>
+              <div class="form-check custom-radio">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault5">
+                <label class="form-check-label" for="flexRadioDefault5">
+                  DeePose
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary"> <a href="Algorithms-Implementation/Face-Detection.html" style="color: white;">Start Project</a> </button>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Object Recognition Modal -->
+<div class="modal fade" id="objectRecognitionModal" tabindex="-1" role="dialog" aria-labelledby="objectRecognitionModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="objectRecognitionModalLabel">Object Recognition and Detection</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+            <p  class=" " style="color: black; font-size: 20px;"><b>Object Recognition and Detection</b></p>
+            <p class="text-dark lead" style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: 15px;">Object recognition determines which objects are present in an image. Object detection is the process of finding instances of objects in images.</p>
+            <div class="list-group">
+              <h1 class="list-group-item list-group-item-action active" aria-current="true" style="font-size: 15px;">
+                Recomended Algorithms </h1>
+              <div class="form-check custom-radio">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Convolutive Neural Networks (CNNs)
+                </label>
+              </div>
+              <div class="form-check custom-radio">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <label class="form-check-label" for="flexRadioDefault2">
+                  Deep Neural Networks (DNN)
+                </label>
+              </div>
+              <div class="form-check custom-radio">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                <label class="form-check-label" for="flexRadioDefault3">
+                  Recurrent Neural Networks (RNN)
+                </label>
+              </div>
+              <div class="form-check custom-radio">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
+                <label class="form-check-label" for="flexRadioDefault4">
+                  Support Vector Machines (SVM)
+                </label>
+              </div>
+              <div class="form-check custom-radio">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault5">
+                <label class="form-check-label" for="flexRadioDefault5">
+                  Histogram of Oriented Gradients (HOG)
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary"> <a href="Algorithms-Implementation/Face-Detection.html" style="color: white;">Start Project</a> </button>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Object Detection Modal -->
+<div class="modal fade" id="objectDetectionModal" tabindex="-1" role="dialog" aria-labelledby="objectDetectionModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="objectDetectionModalLabel">Motion Analysis</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+            <p  class=" " style="color: black; font-size: 25px;"><b>Motion Analysis</b></p>
+            <p class="text-dark lead" style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: 15px;">Motion analysis involves detecting and understanding the motion of objects or camera movements in videos.</p>
+            <div class="list-group">
+              <h1 class="list-group-item list-group-item-action active" aria-current="true" style="font-size: 15px;">
+                Recomended Algorithms </h1>
+              <div class="form-check custom-radio">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                  DeepSORT (Simple Online and Realtime Tracking)
+                </label>
+              </div>
+              <div class="form-check custom-radio">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <label class="form-check-label" for="flexRadioDefault2">
+                  TLD (Tracking-Learning-Detection)
+                </label>
+              </div>
+              <div class="form-check custom-radio">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                <label class="form-check-label" for="flexRadioDefault3">
+                  MOSSE (Minimum Output Sum of Squared Error)
+                </label>
+              </div>
+              <div class="form-check custom-radio">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
+                <label class="form-check-label" for="flexRadioDefault4">
+                  FlowNet
+                </label>
+              </div>
+              <div class="form-check custom-radio">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault5">
+                <label class="form-check-label" for="flexRadioDefault5">
+                  Dynamic Time Warping (DTW)
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary"> <a href="Algorithms-Implementation/Face-Detection.html" style="color: white;">Start Project</a> </button>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 mb-3 mb-sm-0">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><p class="" style="color: black; font-size: 25px;">OCR (Optical Character Recognition)</p></h5>
+          <p class="card-text">
+            <img src="images/5.png" alt="" style="display: block;margin-left: auto;margin-right: auto;width: 50%;" width="250" height="200">
+          </p>
+          <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#imageClassificationModal">Start the OCR (Optical Character Recognition) Project</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6 mb-3 mb-sm-0">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><p class="" style="color: black; font-size: 25px;">Facial Landmark Detection</p></h5>
+          <p class="card-text">
+            <img src="images/6.jpeg" alt="" style="display: block;margin-left: auto;margin-right: auto;width: 50%;" width="250" height="200">
+          </p>
+          <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#imageSegmentationModal">Start the Facial Landmark Detection Project</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Image Classification Modal -->
+<div class="modal fade" id="imageClassificationModal" tabindex="-1" role="dialog" aria-labelledby="imageClassificationModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="imageClassificationModalLabel">OCR (Optical Character Recognition)</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p  class=" " style="color: black; font-size: 20px;"><b>OCR (Optical Character Recognition)</b></p>
+        <p class="text-dark lead" style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: 15px;">The process that converts an image of text into a machine-readable text format.</p>
+        <div class="list-group">
+          <h1 class="list-group-item list-group-item-action active" aria-current="true" style="font-size: 15px;">
+            Recomended Algorithms </h1>
+          </a>
+          <div class="form-check custom-radio">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+              Convolutive Neural Networks (CNNs)
+            </label>
+          </div>
+          <div class="form-check custom-radio">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Recurrent Neural Networks (RNNs)
+            </label>
+          </div>
+          <div class="form-check custom-radio">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+            <label class="form-check-label" for="flexRadioDefault3">
+              BERT, GPT-3 
+            </label>
+          </div>
+          <div class="form-check custom-radio">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
+            <label class="form-check-label" for="flexRadioDefault4">
+              Connectionist Temporal Classification (CTC)
+            </label>
+          </div>
+          <div class="form-check custom-radio">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault5">
+            <label class="form-check-label" for="flexRadioDefault5">
+              Support Vector Machines (SVMs)
+            </label>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary"> <a href="Algorithms-Implementation/Face-Detection.html" style="color: white;">Start Project</a> </button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Image Segmentation Modal -->
+<div class="modal fade" id="imageSegmentationModal" tabindex="-1" role="dialog" aria-labelledby="imageSegmentationModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="imageSegmentationModalLabel">Facial Landmark Detection</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p  class=" " style="color: black; font-size: 25px;"><b>Facial Landmark Detection</b></p>
+        <p class="text-dark lead" style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: 15px;">To scan digital images or real-life scenarios to locate instances of every object, separate them, and analyze their necessary features for real-time predictions.</p>
+        <div class="list-group">
+          <h1 class="list-group-item list-group-item-action active" aria-current="true" style="font-size: 15px;">
+            Recomended Algorithms </h1>
+          </a>
+          <div class="form-check custom-radio">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+              Convolutive Neural Networks (CNNs)
+            </label>
+          </div>
+          <div class="form-check custom-radio">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+            <label class="form-check-label" for="flexRadioDefault2">
+              Deep Convolutional Neural Networks (DCNNs)
+            </label>
+          </div>
+          <div class="form-check custom-radio">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+            <label class="form-check-label" for="flexRadioDefault3">
+              Face Alignment Networks
+            </label>
+          </div>
+          <div class="form-check custom-radio">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
+            <label class="form-check-label" for="flexRadioDefault4">
+              One-shot Learning and Siamese Networks
+            </label>
+          </div>
+          <div class="form-check custom-radio">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault5">
+            <label class="form-check-label" for="flexRadioDefault5">
+              3D Face Landmark Detection
+            </label>
+          </div>
+          
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary"> <a href="Algorithms-Implementation/Face-Detection.html" style="color: white;">Start Project</a> </button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<br><br>
+  <!-- Algorithms End -->
+
+  <!-- Footer Section -->
+<footer class="bg-dark text-light py-4">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-6">
+              <p>&copy; 2023 Model Master</p>
+          </div>
+          <div class="col-md-6 text-right">
+              <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+          </div>
+      </div>
+  </div>
+</footer>
+<!-- End of Footer Section -->
+
+  <!-- JS LINKS -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teachable Machine</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .card {
+      border: none;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      max-width: 100%;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card-title {
+      font-size: 1rem;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+    .card-text {
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row" id="cardContainer">
+          <!-- The initial card -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card">
+              <div class="card-body">
+                <input type="text" class="card-title mb-2" placeholder="Class 1">
+                <p class="card-text">Add image samples.</p>
+                <div>
+                  <button class="btn btn-primary" onclick="startWebcam(this)">Start Webcam</button>
+                  <label class="btn btn-secondary">
+                    Upload <input type="file" style="display: none;" accept="image/*" onchange="handleUpload(this)">
+                  </label>
+                </div>
+                <div class="webcam-container"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-4">
+          <button id="addCardButton" class="btn btn-primary">Add New Class</button>
+        </div>
+      </div>
+
+
+<script>
+    const cardContainer = document.getElementById('cardContainer');
+    const addCardButton = document.getElementById('addCardButton');
+  
+    let cardCount = 1;
+  
+    addCardButton.addEventListener('click', () => {
+      const newCard = `
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card">
+            <div class="card-body">
+              <input type="text" class="card-title mb-2" placeholder="Class ${cardCount + 1}">
+              <p class="card-text">Add image samples.</p>
+              <div>
+                <button class="btn btn-primary" onclick="startWebcam(this)">Start Webcam</button>
+                <label class="btn btn-secondary">
+                  Upload <input type="file" style="display: none;" accept="image/*" onchange="handleUpload(this)">
+                </label>
+              </div>
+              <div class="webcam-container"></div>
+            </div>
+          </div>
+        </div>
+      `;
+  
+      // Create a new DOM element from the newCard string
+      const newCardElement = document.createRange().createContextualFragment(newCard);
+  
+      // Append the new card element to the card container
+      cardContainer.appendChild(newCardElement);
+      cardCount++;
+    });
+  
+    function startWebcam(button) {
+      const cardBody = button.closest('.card-body');
+      const webcamContainer = cardBody.querySelector('.webcam-container');
+      
+      if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices.getUserMedia({ video: true })
+          .then(stream => {
+            const video = document.createElement('video');
+            video.autoplay = true;
+            video.srcObject = stream;
+            webcamContainer.innerHTML = '';
+            webcamContainer.appendChild(video);
+          })
+          .catch(error => {
+            console.error('Error accessing webcam:', error);
+          });
+      } else {
+        console.error('getUserMedia is not supported in this browser.');
+      }
+    }
+  
+    function handleUpload(input) {
+      const cardBody = input.closest('.card-body');
+      const uploadedImage = document.createElement('img');
+      uploadedImage.style.maxWidth = '100%';
+      uploadedImage.style.marginTop = '10px';
+      uploadedImage.src = URL.createObjectURL(input.files[0]);
+      cardBody.appendChild(uploadedImage);
+    }
+  </script>
+  
+</body>
+</html>
