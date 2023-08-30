@@ -8,109 +8,9 @@
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="Algorithms.css">
   <title>ModelMaster - Algorithms</title>
 </head>
-
-<style>
-  /* Add custom CSS styles here */
-
-
-  .navbar-brand {
-    font-size: 34px; /* Increase navbar brand font size */
-    font-weight: bold;
-    color: #333;
-  }
-
-  .title {
-    text-align: center;
-    font-size: 36px;
-    color: #333;
-    margin-top: 30px;
-  }
-
-  .container {
-    text-align: center;
-    margin-top: 20px;
-  }
-
-  .btn-primary {
-    font-weight: bolder;
-    background-color: #007bff;
-    border-color: #007bff;
-  }
-
-  .btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-  }
-
-  .card {
-    background-color: #ffffff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
-
-  }
-
-  /* .card:hover {
-    transform: scale(1.02);
-  } */
-
-  .card-title {
-    font-size: 24px;
-    color: #333;
-  }
-
-  .card-text {
-    text-align: center;
-  }
-
-  .modal-content {
-    background-color: #ffffff;
-  }
-
-  .modal-title {
-    font-size: 24px;
-    color: #333;
-  }
-
-  .modal-body {
-    color: #555;
-  }
-
-  .list-group-item.active {
-    background-color: #007bff;
-    border-color: #007bff;
-  }
-
-  .list-group-item.active:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-  }
-
-.custom-radio {
-  margin-bottom: 10px;
-}
-
-.custom-radio .form-check-input[type="radio"] {
-  width: 20px; 
-  height: 20px; 
-  margin-right: 10px; 
-  border-radius: 50%; 
-  border: 2px solid #3498db;
-}
-
-.custom-radio .form-check-input[type="radio"]:checked {
-  background-color: #3498db;
-}
-
-.custom-radio .form-check-label {
-  font-size: 16px;
-  color: #333;
-  cursor: pointer;
-}
-
-
-</style>
 
 <body style="font-family: 'Poppins', sans-serif;
  background-color: white;">
@@ -121,7 +21,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <a class="navbar-brand text-dark" href="Landing-page.html">Model Master</a>
+      <a class="navbar-brand text-dark" href="Landing-page.html">CV Task Master</a>
     </div>
   
   </nav>
@@ -157,6 +57,7 @@
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary" id="openButton" disabled> <a href="Algorithms-Implementation/Face-Detection.html" style="color: white;">Open</a> </button>
           </div>
+
         </div>
       </div>
     </div>
@@ -212,6 +113,29 @@
                   </div>
               </div>
           </div>
+          <div class="col-sm-6 mb-3 mb-sm-0">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title"><p class="" style="color: black; font-size: 25px;">OCR (Optical Character Recognition)</p></h5>
+                <p class="card-text">
+                  <img src="images/5.png" alt="" style="display: block;margin-left: auto;margin-right: auto;width: 50%;" width="250" height="200">
+                </p>
+                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#imageClassificationModal">Start the OCR (Optical Character Recognition) Project</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 mb-3 mb-sm-0">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title"><p class="" style="color: black; font-size: 25px;">Facial Landmark Detection</p></h5>
+                <p class="card-text">
+                  <img src="images/6.jpeg" alt="" style="display: block;margin-left: auto;margin-right: auto;width: 50%;" width="250" height="200">
+                </p>
+                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#imageSegmentationModal">Start the Facial Landmark Detection Project</a>
+              </div>
+            </div>
+          </div>
+
       </div>
   </div>
 </div>
@@ -236,7 +160,7 @@
               <div class="form-check custom-radio">
                 <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                 <label class="form-check-label" for="flexRadioDefault1">
-                  YOLO
+                  Eigenface
                 </label>
               </div>
               <div class="form-check custom-radio">
@@ -266,9 +190,10 @@
             </div>
           </div>
           <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary"> <a href="Algorithms-Implementation/Face-Detection.html" style="color: white;">Start Project</a> </button>
-          </div>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary"> <a href="Algorithms-Implementation/Face-Detection.html" style="color: white;">Start Project</a> </button>
+        </div>
+         </div>
       </div>
   </div>
 </div>
@@ -322,9 +247,9 @@
             </div>
           </div>
           <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary"> <a href="Algorithms-Implementation/Face-Detection.html" style="color: white;">Start Project</a> </button>
-          </div>
+            <h1 class="list-group-item list-group-item-action active" aria-current="true" style="font-size: 15px; text-align: center;">
+              Coming Soon </h1>
+             </div>
       </div>
   </div>
 </div>
@@ -348,38 +273,38 @@
               <div class="form-check custom-radio">
                 <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                 <label class="form-check-label" for="flexRadioDefault1">
-                  Convolutive Neural Networks (CNNs)
+                  Region-based Convolutional Neural
                 </label>
               </div>
               <div class="form-check custom-radio">
                 <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
                 <label class="form-check-label" for="flexRadioDefault2">
-                  Deep Neural Networks (DNN)
+                  Faster R-CNN
                 </label>
               </div>
               <div class="form-check custom-radio">
                 <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
                 <label class="form-check-label" for="flexRadioDefault3">
-                  Recurrent Neural Networks (RNN)
+                  YOLO
                 </label>
               </div>
               <div class="form-check custom-radio">
                 <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
                 <label class="form-check-label" for="flexRadioDefault4">
-                  Support Vector Machines (SVM)
+                  Deep Neural Networks (DNN)
                 </label>
               </div>
               <div class="form-check custom-radio">
                 <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault5">
                 <label class="form-check-label" for="flexRadioDefault5">
-                  Histogram of Oriented Gradients (HOG)
+                  Convolutional Neural Networks (CNN)
                 </label>
               </div>
             </div>
           </div>
           <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary"> <a href="Algorithms-Implementation/Face-Detection.html" style="color: white;">Start Project</a> </button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary"> <a href="Algorithms-Implementation/Face-Detection.html" style="color: white;">Start Project</a> </button>
           </div>
       </div>
   </div>
@@ -434,40 +359,13 @@
             </div>
           </div>
           <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary"> <a href="Algorithms-Implementation/Face-Detection.html" style="color: white;">Start Project</a> </button>
+            <h1 class="list-group-item list-group-item-action active" aria-current="true" style="font-size: 15px; text-align: center;">
+              Coming Soon </h1>   
           </div>
       </div>
   </div>
 </div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm-6 mb-3 mb-sm-0">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title"><p class="" style="color: black; font-size: 25px;">OCR (Optical Character Recognition)</p></h5>
-          <p class="card-text">
-            <img src="images/5.png" alt="" style="display: block;margin-left: auto;margin-right: auto;width: 50%;" width="250" height="200">
-          </p>
-          <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#imageClassificationModal">Start the OCR (Optical Character Recognition) Project</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-sm-6 mb-3 mb-sm-0">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title"><p class="" style="color: black; font-size: 25px;">Facial Landmark Detection</p></h5>
-          <p class="card-text">
-            <img src="images/6.jpeg" alt="" style="display: block;margin-left: auto;margin-right: auto;width: 50%;" width="250" height="200">
-          </p>
-          <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#imageSegmentationModal">Start the Facial Landmark Detection Project</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- Image Classification Modal -->
 <div class="modal fade" id="imageClassificationModal" tabindex="-1" role="dialog" aria-labelledby="imageClassificationModalLabel" aria-hidden="true">
@@ -550,7 +448,7 @@
             </label>
           </div>
           <div class="form-check custom-radio">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
             <label class="form-check-label" for="flexRadioDefault2">
               Deep Convolutional Neural Networks (DCNNs)
             </label>
@@ -576,8 +474,8 @@
           
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary"> <a href="Algorithms-Implementation/Face-Detection.html" style="color: white;">Start Project</a> </button>
+        <h1 class="list-group-item list-group-item-action active" aria-current="true" style="font-size: 15px; text-align: center;">
+          Coming Soon </h1> 
       </div>
     </div>
   </div>
@@ -591,7 +489,7 @@
   <div class="container">
       <div class="row">
           <div class="col-md-6">
-              <p>&copy; 2023 Model Master</p>
+              <p>&copy; 2023 CV Task Master</p>
           </div>
           <div class="col-md-6 text-right">
               <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
