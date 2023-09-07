@@ -4,11 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="css/font-awesome.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="landing-page.css">
+  <link rel="stylesheet" href="style.css">
   <title>AutoVision - Computer Vision</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
@@ -97,8 +97,8 @@
   <div class="AboutSection bg-white d-flex flex-column justify-content-center align-items-center   " id="About">
     <h1 class="title text-center mb-4 mt-5" style="font-family: 'Poppins', sans-serif;
   ">About AutoVision</h1>
-    <div class=" w-75   rounded p-4">
-      <div class=" p-2 d-flex flex-column justify-content-center align-items-center ">
+    <div class=" about w-75   rounded p-4">
+      <div class=" pic p-2 d-flex flex-column justify-content-center align-items-center ">
         <img src="images/poster.jpg" alt="">
         <button class="btn btn-primary rounded-circle"
           style="font-size: 40px; margin-top: -200px; width: 80px; height: 80px;">+</button>
@@ -212,8 +212,8 @@
       <!-- Add more algorithm cards as needed -->
     </div>
     <div class="algorithm-Bottom  text-left ">
-      <div><img src="images/gesture.PNG"></div>
-      <div>
+      <div class="B_PIC"><img src="images/gesture.PNG"></div>
+      <div class="B_ITEM">
         <h4><b>Real Time Applications</b></h4>
         <p class=" ml-auto lead">
           • Self-driving cars <br>
@@ -234,7 +234,7 @@
     <h2 class="text-center mt-3" style="font-weight: bold;"><u>How do I use It ?</u></h2>
 
     <div class="vision d-flex justify-content-center align-items-center  p-5" style="gap: 2rem;">
-      <div class=" p-3" style="height: 300px;">
+      <div class="vision_Text p-3" >
         <img src="images/train2.svg" width="250px" alt="">
         <div class="container mt-3">
           <h4>1.Gather</h4>
@@ -243,7 +243,7 @@
         </div>
       </div>
 
-      <div class=" p-3" style="height: 300px;">
+      <div class="vision_Text p-3" >
         <img src="images/train1.svg" width="250px" alt="">
         <div class="container mt-3">
           <h4>2. Train</h4>
@@ -252,7 +252,7 @@
         </div>
       </div>
 
-      <div class=" p-3 overflow-auto" style="height: 400px;">
+      <div class="vision_Text p-3 overflow-auto" >
         <img src="images/train4.svg" width="220px" alt="">
         <div class="container mt-3">
           <h4>3. Export</h4>
@@ -271,10 +271,9 @@
       <div class="row">
         <div class="col-md-6">
           <p>&copy; 2023 AutoVision</p>
-        </div>
-        <div class="col-md-6 text-right">
           <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
         </div>
+
       </div>
     </div>
   </footer>
